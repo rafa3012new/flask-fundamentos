@@ -1,0 +1,26 @@
+{% extends "tablero.html" %}
+{%block titulo%}TABLERO AJEDREZ DINAMICO FILAS{%endblock%}
+{%block contenido%}
+  {% for i in range(1,filas+1): %}
+    {#Si el valor de i es par se imprime la fila inciando por color 1#}
+    {% if i % 2 == 0 %}
+      <tr class="fila">
+        {#se imprimen estaticamente las columnas inciando por color 1#}
+        {% for j in range(1,4+1): %}
+        <td class="color2"></td>
+        <td class="color1"></td>
+        {%endfor%}
+      </tr>
+    {% endif %}
+    {#Si el valor de i es impar se imprime la fila inciando por color 2#}
+    {% if i % 2 != 0 %}
+      <tr class="fila">
+        {% for j in range(1,4+1): %}
+        {#se imprimen estaticamente las columnas inciando por color 2#}
+          <td class="color1"></td>
+          <td class="color2"></td>
+        {%endfor%}
+      </tr>
+    {% endif %}
+  {% endfor %}   
+{%endblock%}
