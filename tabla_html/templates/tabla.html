@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{%block titulo%}{%endblock%} - DEMO FLASK</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/tabla_html.css') }}" type="text/css">
+</head>
+<body>
+    <!--Se crear el contenedor del titulo y del tablero de ajedrez-->
+    <div class="contenedor">
+      <!--Se crear el contenedor del titulo-->
+      <div class="titulo"><h1>Welcome to Tabla HTML Demo!</h1>
+      </div>
+      <!--Se crear el contenedor del tablero de ajedrez-->
+      <div class="contenedor_tabla_html">
+        <!--Se crean 1 tabla que contenga las filas y columnas para crear el tablero de ajedrez-->
+        <table class="tabla_html">          
+          <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+          </tr>          
+          {%block contenido%}
+          {%endblock%}
+        </table>
+    </div>
+  </div>
+</body>
+</html>
