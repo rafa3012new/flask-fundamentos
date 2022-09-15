@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask Demo</title>
+    <link rel="stylesheet" href="/tienda_fruta_dojo.css" type="text/css">
+</head>
+<body>
+    <div class="principal">
+      <div class="titulo">
+        <h1>Dojo Fruit Store!</h1>
+      </div>
+      <div class="contenedor">
+        
+        <div class="contenedor_componentes">
+           <div class="subtitulo"><p>Que desea comprar?</p></div>
+           <div class="tabla">
+            <table class="tabla_frutas">
+                <tr>
+                    <th>Nombre de la Fruta</th>
+                    <th>Precio</th>
+                    <th>Cantidad Paquete</th>
+                </tr>
+                <!--Datos estaticos de la tabla se deben reemplazar con flask dinamicamente-->
+                <tr>
+                  <td>Frutilla Blanca</td>
+                  <td>$7</td>
+                  <td>
+                    <select id="cant_fb">
+                      <option value="">0</option>
+                      <option value="">1</option>
+                      <option value="">2</option>
+                      <option value="">3</option>
+                      <option value="">4</option>
+                      <option value="">5</option>
+                      <option value="">6</option>
+                      <option value="">7</option>
+                      <option value="">8</option>
+                      <option value="">9</option>
+                      <option value="">10</option>
+                    </select>  
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>Maqui</td>
+                  <td>$5</td>
+                  <td>
+                    <select id="cant_ma">
+                      <option value="">0</option>
+                      <option value="">1</option>
+                      <option value="">2</option>
+                      <option value="">3</option>
+                      <option value="">4</option>
+                      <option value="">5</option>
+                      <option value="">6</option>
+                      <option value="">7</option>
+                      <option value="">8</option>
+                      <option value="">9</option>
+                      <option value="">10</option>
+                    </select>  
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>Chirimoya</td>
+                  <td>$8</td>
+                  <td>
+                    <select id="cant_ch">
+                      <option value="">0</option>
+                      <option value="">1</option>
+                      <option value="">2</option>
+                      <option value="">3</option>
+                      <option value="">4</option>
+                      <option value="">5</option>
+                      <option value="">6</option>
+                      <option value="">7</option>
+                      <option value="">8</option>
+                      <option value="">9</option>
+                      <option value="">10</option>
+                    </select>  
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>Rosa Mosqueta</td>
+                  <td>$4</td>
+                  <td>
+                    <select id="ro">
+                      <option value="">0</option>
+                      <option value="">1</option>
+                      <option value="">2</option>
+                      <option value="">3</option>
+                      <option value="">4</option>
+                      <option value="">5</option>
+                      <option value="">6</option>
+                      <option value="">7</option>
+                      <option value="">8</option>
+                      <option value="">9</option>
+                      <option value="">10</option>
+                    </select>  
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>Agua y Manto</td>
+                  <td>$3</td>
+                  <td>
+                    <select id="cant_am">
+                      <option value="">0</option>
+                      <option value="">1</option>
+                      <option value="">2</option>
+                      <option value="">3</option>
+                      <option value="">4</option>
+                      <option value="">5</option>
+                      <option value="">6</option>
+                      <option value="">7</option>
+                      <option value="">8</option>
+                      <option value="">9</option>
+                      <option value="">10</option>
+                    </select>  
+                  </td>
+                </tr>
+
+                <!-- {%block contenido%}                
+                {%endblock%} -->
+            </table>
+           </div>
+           <div class="subtitulo"><p>Informacion del Cliente</p></div>
+           <div class="formulario">
+             <div class="form_componentes">
+               <div>
+               <label for="">Nombre  :</label>
+               <label for="">Id del Estudiante  :</label>
+               </div>
+               <div>
+                <input type="text">
+                <input type="text">
+              </div>
+             </div>
+             <div class="contenedor_boton">
+               <button>Realizar la compra</button>
+             </div>
+           </div>  
+        </div>
+      
+        <div class="contenedor_mensaje">
+          <div class="titulo_mensaje"><h4>Bienvenido a la tienda de Fruta Dojo!</h4></div>           
+          <div class="contenido_mensaje">
+            <p>Su dojo decidio comprar frutas para todos los estudiantes!
+               Porfavor utilice esta aplicacion para decirnos cuales frutas
+               usted desea llevar!. Una vez que usted termine de hacer su orden
+               le cobraremos a su usuario de estudiante automaticamente. 
+            </p>
+            <p>Dojo Fruit Store es orgullosamente contruida en Flask</p>
+          </div>           
+        </div>    
+      
+      </div>
+    </div>
+</body>
+</html>
