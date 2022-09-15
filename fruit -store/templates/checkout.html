@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask Demo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/tienda_fruta_dojo.css') }}" type="text/css">
+</head>
+<body>
+    <div class="principal">
+      <div class="titulo_checkout">
+        <h1>Gracias por su compra!</h1>
+        <p>Hemos ordenado {{session['total_articulos']}} articulos para usted, y el cobro de $ {{session['monto_total']}} se cargara 
+           a su cuenta de estudiante, hoy {{hoy}}
+        </p>
+      </div>
+      <div class="contenedor">
+        
+        <div class="contenedor_componentes">
+           <div class="subtitulo"><p>Detalle de la Orden de Compra</p></div>
+           <div class="tabla">
+            <table class="tabla_frutas_checkout">
+                <tr>
+                    <th>Nombre Fruta</th>
+                    <th>Precio $</th>
+                    <th>Cantidad</th>
+                    <th>Subtotal</th>
+                </tr>
+                <!--Datos estaticos de la tabla se deben reemplazar con flask dinamicamente-->
+                {% for i in session['lista_frutas'] %}
+                <tr>
+                  <td>{{i['nombre']}}</td>
+                  <td>{{i['precio']}}</td>
+                  <td>{{i['cantidad']}}</td>
+                  <td>{{i['subtotal']}}</td>
+                </tr>    
+                {% endfor %}
+              
+            </table>
+           </div>
+           <div class="subtitulo"><p>Informacion del Cliente</p></div>
+           <div class="formulario">
+             <div class="form_etiquetas">
+               <div>
+                <p>Nombre : </p>
+                <p>Id del estudiante : </p>
+               </div>
+               <div>
+                <p>{{session['nombre_estudiante']}}</p>
+                <p>{{session['id_estudiante']}}</p>
+              </div>
+             </div>
+             <div class="contenedor_boton">
+               <div><a  href="/regreso">Regresar</a></div>
+             </div>
+           </div>  
+        </div>
+      
+      
+      </div>
+    </div>
+</body>
+</html>

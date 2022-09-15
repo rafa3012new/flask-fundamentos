@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{%block titulo%}{%endblock%}Flask Demo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/tienda_fruta_dojo.css') }}" type="text/css">
+    <script src="{{ url_for('static', filename= 'js/tienda_fruta_dojo.js') }}"></script>
+</head>
+<body>
+    <div class="principal">
+      
+      <div class="titulo">
+        <div><img src="{{ url_for('static', filename= 'img/icon_codingdojo.png') }}" alt=""></div>
+        <div><h1>Dojo Fruit Store!</h1></div> 
+        <div><img src="{{ url_for('static', filename= 'img/fruit_ninja.webp') }}" alt=""></div>
+      </div>
+
+      <div class="contenedor">        
+        <div class="contenedor_componentes">
+          <form  action="/procesar" method="post">                          
+
+              <div class="subtitulo"><p>Informacion del Cliente</p></div>
+
+              <div class="formulario">                
+                <div class="form_componentes">
+                  <div>
+                    <label for="nombre_estudiante">Nombre  :</label>
+                    <label for="id_estudiante">Id del Estudiante  :</label>
+                  </div>
+                  <div>
+                    <input id="nombre_estudiante" name="nombre_estudiante" type="text">
+                    <input id="id_estudiante" name="id_estudiante" type="text">
+                  </div>
+                </div>                
+                <div class="contenedor_boton">
+                  <div><a href="/limpiar">Limpiar</a></div>
+                  <button type="submit">Realizar la compra</button>
+                </div>              
+              </div>  
+
+
+              <div class="subtitulo"><p>Que desea comprar?</p></div>
+          
+              <div class="tabla">
+                <table class="tabla_frutas">
+                  <tr>
+                    <th>Nombre Fruta</th>
+                    <th>Precio $</th>
+                    <th>Cantidad</th>
+                    <th>Subtotal</th>
+                  </tr>
+                  <!--Datos estaticos de la tabla se deben reemplazar con flask dinamicamente-->
+                  {%block contenido1%}                
+                  {%endblock%}
+                </table>
+              </div>
+
+            </form>          
+        </div>
+
+        <div class="contenedor_mensaje">
+          <div class="titulo_mensaje"><h4>Bienvenido a la tienda de Fruta Dojo Fruit Store!</h4></div>           
+          <div class="contenido_mensaje">
+            <p>Su dojo decidio comprar frutas para todos los estudiantes!
+               Porfavor utilice esta aplicacion para decirnos cuales frutas
+               usted desea llevar!. Una vez que usted termine de hacer su orden
+               le cobraremos a su usuario de estudiante automaticamente. 
+            </p>
+            <p>Dojo Fruit Store fue desarollada en Flask!</p>
+                      
+          </div>           
+          <div class="contenedor_boton">
+            <div> 
+              <div><a href="/catalogo">Catalogo de Frutas</a></div>
+            </div>
+          </div>
+        </div>    
+      
+      </div>
+    </div>
+</body>
+</html>
