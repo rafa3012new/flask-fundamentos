@@ -1,0 +1,42 @@
+{% extends "encuesta_dojo_base.html" %}
+{% block titulo %}Encuesta Dojo{% endblock %}
+{% block contenido1 %}<h3>Informacion Enviada al {{hoy}}</h3>{% endblock %}
+{% block contenido2 %}
+   <div class="subformulario">
+    <div class="campo">
+      <p class="etiqueta">Nombre del Estudiante :</p>
+      <p class="contenido">{{session['nombre_estudiante']}}</p>
+    </div>
+    <div class="campo">
+      <p class="etiqueta">Ubicacion Dojo :</p>
+      <p class="contenido">{{session['ubicacion_dojo']}}</p>
+    </div>
+    <div class="campo">
+      <p class="etiqueta">Idioma Favorito :</p>
+      <p class="contenido">{{session['idioma_favorito']}}</p>
+    </div>
+    <div class="campo">
+      <p class="etiqueta">Lenguaje de Programacion que domina :</p>
+      <ul>
+      {#Se utiliza un ciclo for para descargar la variable de sesion de tipo array en un ul#}
+      {%for i in session['lenguaje']%}
+        <li class="contenido">{{i}}</li>
+      {%endfor%}
+      </ul>
+    </div>
+    <div class="campo">
+      <p class="etiqueta">Edad :</p>
+      <p class="contenido">{{session['edad']}}</p>
+    </div>
+    <div class="campo">
+      <p class="etiqueta">Comentarios :</p>
+      <p class="contenido">{{session['comentarios']}}</p>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div>
+      <a href="/limpiar">Regresar</a>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,92 @@
+{% extends "encuesta_dojo_base.html" %}
+{% block titulo %}Encuesta Dojo{% endblock %}
+{% block contenido1 %}<h1>Formulario de Introduccion de Datos</h1>{% endblock %}
+{% block contenido2 %}
+  <form action="/grabar" method="post">
+    <div>
+      <div><label for="nombre_estudiante">Nombre del Estudiante</label></div>
+      <div><input type="text" name="nombre_estudiante" id="nombre_estudiante"></div>
+    </div>
+    <div>
+      <div><label for="ubicacion_dojo">Ubicacion del Dojo</label></div>
+      <div>
+        <select name="ubicacion_dojo" id="ubicacion_dojo">
+          <option value="Estados Unidos">Estados Unidos</option>
+          <option value="Chile">Chile</option>
+          <option value="Mexico">Mexico</option>
+          <option value="Canada">Canada</option>
+          <option value="Argentina">Argentina</option>
+          <option value="Panama">Panama</option>
+          <option value="Australia">Australia</option>
+          <option value="Espana">Espana</option>
+          <option value="Inglaterra">Inglaterra</option>
+        </select>
+      </div>
+    </div>
+    <div>
+     <div><label for="idioma_favorito">Idioma Favorito</label></div>
+     <div>
+        <select name="idioma_favorito" id="idioma_favorito">
+          <option value="Espanol">Espanol</option>
+          <option value="Ingles">Ingles</option>
+          <option value="Frances">Frances</option>
+          <option value="Italiano">Italiano</option>
+          <option value="Aleman">Aleman</option>
+          <option value="Ruso">Ruso</option>
+          <option value="Chino">Italiano</option>
+          <option value="japones">Aleman</option>
+          <option value="Portugues">Ruso</option>
+        </select>
+      </div>
+    </div>
+
+     <div>
+      <div><label for="lenguajes_programacion">Lenguaje de Programacion que domina</label></div>
+      <div id="groupcontainer">
+        <fieldset>
+          <legend>Elija uno o varios:</legend>
+          <div id="divlabelgroup">
+            <label for="python">Python</label>
+            <label for="javascript">Javascript</label>
+            <label for="c#">C#</label>
+            <label for="java">Java</label>
+          </div>
+          <div id="divgroup">
+            {#Se utiliza una variable de tipo array_input[] para subirla con el metodo post al server#}
+            <input type="checkbox" id="python" name="lenguaje[]" value="python">
+            <input type="checkbox" id="javascript" name="lenguaje[]" value="javascript">
+            <input type="checkbox" id="c#" name="lenguaje[]" value="c#">
+            <input type="checkbox" id="java" name="lenguaje[]" value="java">
+          </div>
+        </fieldset>
+       </div>
+     </div>
+
+     <div>
+      <div><label for="edad">Seleccione su edad</label></div>
+      <div id="groupcontainer">
+        <fieldset>
+          <legend>Elija una opcion:</legend>
+          <div id="divlabelgroup">
+            <label for="young">0 - 30</label>
+            <label for="adult">30 - 60</label>
+            <label for="old">60 - 100</label>
+          </div>
+          <div id="divgroup">
+            <input type="radio" id="young" name="edad" value="0-30">
+            <input type="radio" id="adult" name="edad" value="30-60">
+            <input type="radio" id="old" name="edad" value="60-100">
+          </div>
+        </fieldset>
+       </div>
+     </div>
+
+    <div>
+      <div><label for="comentarios">Comentarios</label></div>
+      <div><textarea id="comentarios" name="comentarios" rows="4" cols="50"></textarea></div>
+    </div>
+    <div class="divboton">
+        <button type="submmit">Enviar</button>
+    </div>
+  </form>
+{% endblock %}
